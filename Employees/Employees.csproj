@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC7CB391-2C04-47DF-8897-75F8D46899B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Employees</RootNamespace>
+    <AssemblyName>Employees</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>employees.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>packages\NLog.4.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainModelEntity\Database.cs" />
+    <Compile Include="DomainModelEntity\EmployeesContext.cs" />
+    <Compile Include="DomainModelEntity\EmployeesDomainModel.cs" />
+    <Compile Include="DomainModel\Address.cs" />
+    <Compile Include="DomainModel\AddressRepository.cs" />
+    <Compile Include="DomainModel\Certification.cs" />
+    <Compile Include="DomainModel\CertificationRepository.cs" />
+    <Compile Include="DomainModel\CertificationsOfEmployee.cs" />
+    <Compile Include="DomainModel\CertificationsOfEmployeeRepository.cs" />
+    <Compile Include="DomainModel\City.cs" />
+    <Compile Include="DomainModel\CityRepository.cs" />
+    <Compile Include="DomainModel\Employee.cs" />
+    <Compile Include="DomainModel\EmployeeRepository.cs" />
+    <Compile Include="DomainModel\IDatabase.cs" />
+    <Compile Include="DomainModel\IMyEmployeesDomainModel.cs" />
+    <Compile Include="DomainModel\IRepository.cs" />
+    <Compile Include="DomainModel\Position.cs" />
+    <Compile Include="DomainModel\PositionRepository.cs" />
+    <Compile Include="DomainModel\Street.cs" />
+    <Compile Include="DomainModel\StreetRepository.cs" />
+    <Compile Include="MVP\BasePresenter.cs" />
+    <Compile Include="MVP\IPresenter.cs" />
+    <Compile Include="MVP\Iview.cs" />
+    <Compile Include="Options\Options.cs" />
+    <Compile Include="Presenters\AddressesAddEditPresenter.cs" />
+    <Compile Include="Presenters\AddressesPresenter.cs" />
+    <Compile Include="Presenters\CertificationsOfEmployeesAddEditPresenter.cs" />
+    <Compile Include="Presenters\CertificationsOfEmployeesPresenter.cs" />
+    <Compile Include="Presenters\CertificationsPresenter.cs" />
+    <Compile Include="Presenters\CitiesPresenter.cs" />
+    <Compile Include="Presenters\EmployeesAddEditPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\PositionsPresenter.cs" />
+    <Compile Include="Presenters\SalaryPresenter.cs" />
+    <Compile Include="Presenters\StreetsPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Utils.cs" />
+    <Compile Include="Views\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddressItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddressItemForm.Designer.cs">
+      <DependentUpon>AddressItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CertificationsOfEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CertificationsOfEmployeeForm.Designer.cs">
+      <DependentUpon>CertificationsOfEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CertificationsOfEmployeeItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CertificationsOfEmployeeItemForm.Designer.cs">
+      <DependentUpon>CertificationsOfEmployeeItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeItemForm.Designer.cs">
+      <DependentUpon>EmployeeItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IAddressAddEditView.cs" />
+    <Compile Include="Views\IAddressView.cs" />
+    <Compile Include="Views\ICertificationsOfEmployeeAddEditView.cs" />
+    <Compile Include="Views\ICertificationsOfEmployeeView.cs" />
+    <Compile Include="Views\IEmployeeAddEditView.cs" />
+    <Compile Include="Views\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\IPositionView.cs" />
+    <Compile Include="Views\IRefView.cs" />
+    <Compile Include="Views\ISalaryView.cs" />
+    <Compile Include="Views\ListOfCertificationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListOfCertificationsForm.Designer.cs">
+      <DependentUpon>ListOfCertificationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PositionForm.Designer.cs">
+      <DependentUpon>PositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PositionItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PositionItemForm.Designer.cs">
+      <DependentUpon>PositionItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RefForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RefForm.Designer.cs">
+      <DependentUpon>RefForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RefItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RefItemForm.Designer.cs">
+      <DependentUpon>RefItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalaryForm.Designer.cs">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScreensaverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ScreensaverForm.Designer.cs">
+      <DependentUpon>ScreensaverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddressForm.resx">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddressItemForm.resx">
+      <DependentUpon>AddressItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CertificationsOfEmployeeForm.resx">
+      <DependentUpon>CertificationsOfEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CertificationsOfEmployeeItemForm.resx">
+      <DependentUpon>CertificationsOfEmployeeItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeItemForm.resx">
+      <DependentUpon>EmployeeItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListOfCertificationsForm.resx">
+      <DependentUpon>ListOfCertificationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PositionForm.resx">
+      <DependentUpon>PositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PositionItemForm.resx">
+      <DependentUpon>PositionItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RefForm.resx">
+      <DependentUpon>RefForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RefItemForm.resx">
+      <DependentUpon>RefItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalaryForm.resx">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ScreensaverForm.resx">
+      <DependentUpon>ScreensaverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="employees.ico" />
+    <None Include="Resources\leader.jpg" />
+    <None Include="Resources\employeeForScreen.png" />
+    <None Include="Resources\employees.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
