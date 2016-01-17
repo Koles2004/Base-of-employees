@@ -1,5 +1,8 @@
 # Base-of-employees
-Accounting program for firms, factories etc. ADO.NET, EF. You can add, edit, remove employees from Database.
+Accounting program for firms, factories etc.
+ADO.NET, EF.
+
+You can add, edit, remove employees from Database.
 Also you can add, edit, remove cities, streets, addresses, positions, certifications and certifications of employees.
 
 You can watch photo of selected employee.
