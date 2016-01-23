@@ -12,3 +12,8 @@ You can watch certifications of selected employee.
 
 Director can't edit and remove data.
 Administrator can do everything.
+
+Password for Director is "Director"
+Password for Administrator is "Administrator"
+
+The folder "Photos" must be pasted to the folder "Debug"
