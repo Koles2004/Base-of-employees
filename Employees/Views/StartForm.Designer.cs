@@ -53,7 +53,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 23);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Выберите себя:";
+            this.label1.Text = "Choose yourself:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -63,7 +63,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(246, 23);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Введите пароль:";
+            this.label2.Text = "Enter the password:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxPassword
@@ -84,7 +84,7 @@
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(116, 40);
             this.buttonOk.TabIndex = 2;
-            this.buttonOk.Text = "ОК";
+            this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
@@ -103,7 +103,7 @@
             this.MaximizeBox = false;
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Авторизация";
+            this.Text = "Authorisation";
             this.Load += new System.EventHandler(this.StartForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -15,7 +15,7 @@ namespace Employees.Presenters
     {
         private IMyEmployeesDomainModel Model { get; set; }
         public string Role { get; set; }
-        private string[] sex = { "Male", "Female", "All"};
+        private string[] sex = { "All", "Male", "Female" };
 
         public MainPresenter(IMyEmployeesDomainModel domainModel, IMainView mainView)
         {
@@ -503,9 +503,9 @@ namespace Employees.Presenters
                 // Sexes
                 if (employeesPosition.Count != 0)
                 {
-                    string sexs = View.SexComboBox.SelectedIndex == 0 ? "M" : View.SexComboBox.SelectedIndex == 1 ? "F" : "";
+                    string sexs = View.SexComboBox.SelectedIndex == 1 ? "M" : View.SexComboBox.SelectedIndex == 2 ? "F" : "";
 
-                    employeesSex.AddRange(View.SexComboBox.SelectedIndex == 2 ? employeesPosition
+                    employeesSex.AddRange(View.SexComboBox.SelectedIndex == 0 ? employeesPosition
                         : employeesPosition.Where(employee => sexs == employee.Sex));
                 }
 
